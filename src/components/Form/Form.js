@@ -4,8 +4,8 @@ import Input from "../InputsForm/Input"
 import Select from "../InputsForm/Select"
 import "./Form.css"
 
-const Form = (props) => {
-  const teamsSelect = props.teamItems.map((element) => element.name)
+const Form = ({ teamItems, getCollaborator }) => {
+  const teamsSelect = teamItems.map((element) => element.name)
 
   const [name, setName] = useState("")
   const [charge, setCharge] = useState("")
@@ -14,7 +14,7 @@ const Form = (props) => {
 
   const saveData = (event) => {
     event.preventDefault()
-    props.getCollaborator({
+    getCollaborator({
       name,
       charge,
       image,

@@ -1,24 +1,24 @@
 import "./css/Input.css"
 
-const Input = (props) => {
+const Input = ({ required, label, changeInput, value, placeholder }) => {
   const capturingData = (event) => {
-    props.changeInput(event.target.value)
+    changeInput(event.target.value)
   }
 
   return (
     <div className="input-text">
-      {props.required ? (
-        <label>{props.label}</label>
+      {required ? (
+        <label>{label}</label>
       ) : (
         <label>
-          {props.label} <span style={{ fontSize: "12px" }}>(Opcional)</span>
+          {label} <span style={{ fontSize: "12px" }}>(Opcional)</span>
         </label>
       )}
       <input
         onChange={capturingData}
-        value={props.value}
-        required={props.required}
-        placeholder={props.placeholder}
+        value={value}
+        required={required}
+        placeholder={placeholder}
       />
     </div>
   )

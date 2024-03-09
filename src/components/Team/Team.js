@@ -1,11 +1,11 @@
 import TeamMember from "./TeamMember"
 import "./css/Team.css"
 
-const Team = (props) => {
+const Team = ({ teams, collaborators }) => {
   return (
     <section className="team">
-      {props.teams.map((team) => {
-        const teamCollaborators = props.collaborators.filter(
+      {teams.map((team) => {
+        const teamCollaborators = collaborators.filter(
           (col) => col.team === team.name
         )
         if (teamCollaborators.length > 0) {

@@ -1,15 +1,15 @@
 import "./css/Select.css"
 
-const Select = (props) => {
+const Select = ({ label, changeSelect, value, required, items }) => {
   const capturingData = (event) => {
-    props.changeSelect(event.target.value)
+    changeSelect(event.target.value)
   }
 
   return (
     <div className="select">
-      <label>{props.label}</label>
-      <select required={props.required} value={props.value} onChange={capturingData}>
-        {props.items.map((item) => (
+      <label>{label}</label>
+      <select required={required} value={value} onChange={capturingData}>
+        {items.map((item) => (
           <option key={item}>{item}</option>
         ))}
       </select>
