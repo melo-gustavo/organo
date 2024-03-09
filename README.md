@@ -1,3 +1,7 @@
+# Description
+
+Project developed with React and JavaScript. The objective is to create an organization chart of a company and developers with their specializations.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
